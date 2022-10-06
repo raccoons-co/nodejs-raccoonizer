@@ -1,17 +1,17 @@
 import express from 'express';
-import NodejsWebApp from './NodejsWebApp'
+import NodejsWebApp from './NodejsWebApp';
 
 /**
  * Represents NodeJS web application based on Express framework.
  */
-export default class NodejsExpressRaccoonizer
+export default class ExpressRaccoonizer
     implements NodejsWebApp {
 
-    private webapp: any;
+    private webapp: express.Express;
     private port: number;
 
     /**
-     * Initiates NodejsExpressRaccoonizer with predefined Express configuration.
+     * Initiates ExpressRaccoonizer with predefined Express configuration.
      */
     constructor( port: number ) {
         this.webapp = this.newExpressInstance();
