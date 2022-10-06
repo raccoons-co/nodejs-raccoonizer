@@ -1,7 +1,7 @@
 import NodejsWebApp from './NodejsWebApp'
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { WebAppModule } from './WebAppModule'
+import { NestAppModule } from './NestAppModule';
 
 /**
  * Represents NodeJS web application based on NestJS framework.
@@ -13,7 +13,7 @@ export default class NestRaccoonizer
     private port: number;
 
     /**
-     * Initiates NestRaccoonizer with predefined configuration.
+     * Initiates NestRaccoonizer.
      */
     constructor( port: number ) {
         this.webapp = this.promiseNestFastifyApplication();
@@ -25,7 +25,7 @@ export default class NestRaccoonizer
      */
     private async promiseNestFastifyApplication(): Promise<NestFastifyApplication> {
          return await NestFactory.create<NestFastifyApplication>(
-            WebAppModule,
+            NestAppModule,
             new FastifyAdapter({ logger: true })
         );
     }
