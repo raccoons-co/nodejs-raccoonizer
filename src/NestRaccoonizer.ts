@@ -13,17 +13,17 @@ export default class NestRaccoonizer
     private port: number;
 
     /**
-     * Initiates NestRaccoonizer with predefined Express configuration.
+     * Initiates NestRaccoonizer with predefined configuration.
      */
     constructor( port: number ) {
-        this.webapp = this.newNestInstance();
+        this.webapp = this.promiseNestFastifyApplication();
         this.port = port;
     }
 
     /**
      * Returns new instance of Nest.js framework with predefined configuration.
      */
-    private async newNestInstance(): Promise<NestFastifyApplication> {
+    private async promiseNestFastifyApplication(): Promise<NestFastifyApplication> {
          return await NestFactory.create<NestFastifyApplication>(
             WebAppModule,
             new FastifyAdapter({ logger: true })

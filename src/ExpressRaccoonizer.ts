@@ -35,7 +35,8 @@ export default class ExpressRaccoonizer
      * Runs web application.
      */
     public run(): void {
-        this.webapp.listen(
+        this.webapp
+            .listen(
                 this.port,
                 () => { console.log("Example app listening on port %s", this.port ) }
         )
