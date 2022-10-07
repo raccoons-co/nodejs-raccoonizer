@@ -6,7 +6,7 @@ import { NestAppModule } from './NestAppModule';
 /**
  * Represents NodeJS web application based on NestJS framework.
  */
-export default class NestRaccoonizer
+export default class NestFastifyRaccoonizer
     implements NodejsWebApp {
 
     private webapp: Promise<NestFastifyApplication>;
