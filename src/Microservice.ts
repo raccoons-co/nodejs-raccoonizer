@@ -1,3 +1,3 @@
 export default interface Microservice {
-  run(): void;
+  deploy(): void;
 }

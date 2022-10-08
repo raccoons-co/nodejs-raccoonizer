@@ -1,20 +1,27 @@
 /**
- * Represents NodeJS
+ * Represents NodeJS framework of specified type.
  */
 export default class NodejsFramework<T> {
 
   private framework: T;
 
+  /**
+   * Initiates instance with framework and it's configuration.
+   */
   constructor( framework: T ) {
     this.framework = framework;
-    this.configuration();
+    this.initConfiguration();
   }
 
-  public instance(): T {
+  /**
+   * Handles initial framework configuration.
+   */
+  protected initConfiguration(): void  {}
+
+  /**
+   * Returns this framework;
+   */
+  protected instance(): T {
       return this.framework;
   }
-
-  protected configuration(): void  {}
-
-  public listen( port: number ): void {}
 }

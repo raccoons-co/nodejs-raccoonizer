@@ -1,12 +1,15 @@
 import assert from 'node:assert/strict';
-import NestRaccoonizer from './src/NestRaccoonizer';
-// import ExpressRaccoonizer from './src/ExpressRaccoonizer';
+import express from "express";
+import ExpressMicroservice from './src/ExpressMicroservice';
+import Koa from "koa";
+import KoaMicroservice from './src/KoaMicroservice';
 
 try {
     assert( process.env.PORT, "Checks if PORT environment variable exist" );
-    const atPort = Number( process.env.PORT );
-    new NestRaccoonizer( atPort ).run();
-    // new ExpressRaccoonizer( atPort ).run();
+    const port = Number( process.env.PORT );
+
+    new KoaMicroservice(port).deploy();
+    new ExpressMicroservice(port +1 ).deploy( );
 
 } catch( exception ) {
     console.log( exception );
