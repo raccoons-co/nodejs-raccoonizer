@@ -1,10 +1,10 @@
-import Framework from "./Framework";
+import NodejsFramework from "./NodejsFramework";
 import Koa from "koa";
 
 /**
  * Represents NodeJS web application based on Koa framework.
  */
-export default class KoaConfiguration extends Framework<Koa> {
+export default class KoaConfiguration extends NodejsFramework<Koa> {
 
   constructor() {
     super(new Koa());

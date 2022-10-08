@@ -1,18 +1,18 @@
 import Microservice from "./Microservice";
-import Framework from "./Framework";
+import NodejsFramework from "./NodejsFramework";
 
 /**
  * Represents NodejsMicroservice
  */
 export default class NodejsMicroservice<T> implements Microservice {
 
-  private framework: Framework<T>;
+  private framework: NodejsFramework<T>;
   private port: number;
 
   /**
    * Initiates microservice port number and NodeJS framework
    */
-  constructor(port: number, framework: Framework<T>) {
+  constructor(port: number, framework: NodejsFramework<T>) {
     this.framework = framework;
     this.port = port;
   }

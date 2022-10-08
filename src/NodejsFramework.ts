@@ -1,4 +1,7 @@
-export default class Framework<T> {
+/**
+ * Represents NodeJS
+ */
+export default class NodejsFramework<T> {
 
   private framework: T;
 

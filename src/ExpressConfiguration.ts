@@ -1,7 +1,7 @@
+import NodejsFramework from "./NodejsFramework";
 import express from "express";
-import Framework from "./Framework";
 
-export default class ExpressConfiguration extends Framework<express.Express> {
+export default class ExpressConfiguration extends NodejsFramework<express.Express> {
 
   constructor() {
     super(express());
