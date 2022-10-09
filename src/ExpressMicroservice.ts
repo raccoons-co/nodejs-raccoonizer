@@ -4,13 +4,17 @@ import express from "express";
 /**
  * Express configuration and listen handler.
  */
-export default class ExpressMicroservice extends NodejsFramework<express.Express> {
+export default class ExpressMicroservice
+  extends NodejsFramework<express.Express> {
+
+  private port: number;
 
   /**
    * Initiates instance with new Express framework.
    */
-  constructor() {
+  constructor(port: number) {
     super(express());
+    this.port = port;
   }
 
   //@Override
@@ -22,10 +26,10 @@ export default class ExpressMicroservice extends NodejsFramework<express.Express
       );
   }
 
-  public expose( port: number ): void {
+  public deploy(): void {
     this.instance()
-      .listen( port, () => {
-        console.log( "%s listening on port %s", this.constructor.name, port );
+      .listen( this.port, () => {
+        console.log( "%s listening on port %s", this.constructor.name, this.port );
       });
   }
 }
