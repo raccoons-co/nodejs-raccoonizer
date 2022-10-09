@@ -3,7 +3,7 @@ import Koa from "koa";
 import Microservice from "./Microservice";
 
 /**
- * Koa configuration and listen handler.
+ * New NodeJS microservice with Express Koa and your configuration.
  */
 export default class KoaMicroservice
   extends NodejsFramework<Koa>
@@ -19,7 +19,7 @@ export default class KoaMicroservice
   //@Override
   protected initConfiguration(): void {
     this.instance()
-      .use(async (ctx:any) => { ctx.body = "Hello World"; } );
+      .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
 
   //@Implementation

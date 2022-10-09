@@ -5,11 +5,11 @@ import HapiMicroservice from './src/HapiMicroservice';
 
 try {
     assert( process.env.PORT, "Checks if PORT environment variable exist" );
-    const port = Number( process.env.PORT );
+    const  atPort = Number( process.env.PORT );
 
-    new HapiMicroservice( port + 2 ).deploy();
-    new KoaMicroservice( port + 1 ).deploy();
-    new ExpressMicroservice( port ).deploy( );
+    new HapiMicroservice( atPort + 2 ).deploy();
+    new KoaMicroservice( atPort + 1 ).deploy();
+    new ExpressMicroservice( atPort ).deploy( );
 
 } catch( exception ) {
     console.log( exception );

@@ -16,7 +16,10 @@ export default class NodejsFramework<T> {
   /**
    * Handles initial framework configuration.
    */
-  protected initConfiguration(): void  {}
+   //@Override
+  protected initConfiguration(): void {
+    /*eslint no-empty-function: "off"*/
+  }
 
   /**
    * Returns this framework;
