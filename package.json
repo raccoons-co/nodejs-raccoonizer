@@ -6,9 +6,9 @@
   "scripts": {
     "build": "nest build",
     "lint": "npx eslint './src/**/*.ts'",
-    "start": "npm run this:nodejs-raccoonizer:webapp",
+    "start": "npm run raccoonizer:microservice",
     "test": "npm run lint && npm run build && npm run start",
-    "this:nodejs-raccoonizer:webapp": "node dist/EntryPoint.js"
+    "raccoonizer:microservice": "node dist/EntryPoint.js"
   },
   "repository": {
     "type": "git",
