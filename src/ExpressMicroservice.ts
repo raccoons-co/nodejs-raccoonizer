@@ -4,7 +4,7 @@ import Microservice from "./Microservice";
 
 
 /**
- * New NodeJS microservice with Express framework and your configuration.
+ * An Express NodeJS microservice and your configuration.
  */
 export default class ExpressMicroservice
   extends NodejsFramework<express.Express>

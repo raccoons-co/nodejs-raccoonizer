@@ -3,7 +3,7 @@ import Hapi from "@hapi/hapi";
 import Microservice from "./Microservice";
 
 /**
- * New NodeJS microservice with Hapi framework and your configuration.
+ * A Hapi NodeJS microservice and your configuration.
  */
 export default class HapiMicroservice
   extends NodejsFramework<Hapi.Server>

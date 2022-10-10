@@ -13,7 +13,7 @@
 
     "require-author": "error",
     "valid-values-author": ["error", [
-      "Kassandra"
+      "Raccoons <info@raccoons.co>"
     ]],
 
     "require-license": "error",

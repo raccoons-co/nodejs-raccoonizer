@@ -3,7 +3,7 @@ import Koa from "koa";
 import Microservice from "./Microservice";
 
 /**
- * New NodeJS microservice with Express Koa and your configuration.
+ * A Koa NodeJS microservice and your configuration.
  */
 export default class KoaMicroservice
   extends NodejsFramework<Koa>
