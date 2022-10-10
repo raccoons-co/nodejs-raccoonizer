@@ -1,0 +1,34 @@
+{
+  "rules": {
+    "require-name": "error",
+    "name-type": "error",
+    "name-format": "error",
+
+    "require-version": "error",
+    "version-type": "error",
+    "version-format": "error",
+
+    "require-description": "error",
+    "description-type": "error",
+
+    "require-author": "error",
+    "valid-values-author": ["error", [
+      "Kassandra"
+    ]],
+
+    "require-license": "error",
+    "license-type": "error",
+    "valid-values-license": ["error", [
+      "MIT"
+    ]],
+
+    "require-private": "error",
+    "private-type": "error",
+    "valid-values-private": ["error", [
+      true
+    ]],
+
+    "require-engines": "error",
+    "engines-type": "error"
+  }
+}
