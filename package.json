@@ -5,11 +5,11 @@
   "main": "EntryPoint.ts",
   "scripts": {
     "build": "nest build",
-    "lint": "npm run lint:typescript && npm run lint:packagejson",
-    "lint:typescript": "eslint './src/**/*.ts'",
-    "lint:packagejson": "npmPkgJsonLint .",
-    "raccoonizer:microservice": "node dist/EntryPoint",
-    "start": "npm test && npm run raccoonizer:microservice",
+    "lint": "npm run lint.typescript && npm run lint.packagejson",
+    "lint.typescript": "eslint './src/**/*.ts'",
+    "lint.packagejson": "npmPkgJsonLint .",
+    "this.raccoonizer.microservice": "node dist/EntryPoint",
+    "start": "npm test && npm run this.raccoonizer.microservice",
     "test": "npm run lint && npm run build"
   },
   "repository": {
