@@ -18,6 +18,7 @@
   },
   "author": "Raccoons <info@raccoons.co>",
   "license": "MIT",
+  "private": false,
   "bugs": {
     "url": "https://github.com/raccoons-co/nodejs-raccoonizer/issues"
   },

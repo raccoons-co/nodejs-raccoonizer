@@ -25,7 +25,7 @@
     "require-private": "error",
     "private-type": "error",
     "valid-values-private": ["error", [
-      true
+      false
     ]],
 
     "require-engines": "error",
