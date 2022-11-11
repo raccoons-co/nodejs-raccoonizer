@@ -14,6 +14,9 @@ export default class NestFastifyMicroservice
 
   private port: number;
 
+  /**
+   * Initiates Nest Fastify framework and port number to listen.
+   */
   constructor(port: number) {
     super(
       NestFactory.create<NestFastifyApplication>(

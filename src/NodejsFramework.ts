@@ -6,7 +6,7 @@ export default class NodejsFramework<T> {
   private framework: T;
 
   /**
-   * Initiates instance with framework and it's configuration.
+   * Initiates instance with framework and its configuration.
    */
   constructor( framework: T ) {
     this.framework = framework;

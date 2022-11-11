@@ -9,7 +9,7 @@ try {
     assert( process.env.PORT, "Fails if PORT environment variable do not exist." );
     const atPort = Number( process.env.PORT );
 
-    let raccoonizerMap = new Map< string, Microservice >;
+    const raccoonizerMap = new Map< string, Microservice >;
 
     raccoonizerMap
       .set( "Express", new ExpressMicroservice( atPort ))

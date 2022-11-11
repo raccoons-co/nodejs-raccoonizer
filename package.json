@@ -6,7 +6,7 @@
   "scripts": {
     "build": "nest build",
     "lint": "npm run lint.typescript && npm run lint.packagejson",
-    "lint.typescript": "eslint './src/**/*.ts'",
+    "lint.typescript": "eslint './**/*.ts'",
     "lint.packagejson": "npmPkgJsonLint .",
     "this.raccoonizer.microservice": "node dist/EntryPoint",
     "start": "npm test && npm run this.raccoonizer.microservice",

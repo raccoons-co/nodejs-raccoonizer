@@ -11,6 +11,9 @@ export default class KoaMicroservice
 
   private port: number;
 
+  /**
+   * Initiates Koa framework and port number to listen.
+   */
   constructor(port: number) {
     super(new Koa());
     this.port = port;

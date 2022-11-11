@@ -9,9 +9,12 @@ export default class HapiMicroservice
   extends NodejsFramework<Hapi.Server>
   implements Microservice {
 
-    constructor(port: number) {
-      super(  new Hapi.Server( { port: port } ) );
-    }
+  /**
+   * Initiates Hapi framework with port number to listen.
+   */
+  constructor(port: number) {
+    super(  new Hapi.Server( { port: port } ) );
+  }
 
   //@Override
   protected initConfiguration(): void {

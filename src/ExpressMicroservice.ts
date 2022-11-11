@@ -2,7 +2,6 @@ import NodejsFramework from "./NodejsFramework";
 import express from "express";
 import Microservice from "./Microservice";
 
-
 /**
  * An Express NodeJS microservice and your configuration.
  */
