@@ -22,12 +22,6 @@
       "MIT"
     ]],
 
-    "require-private": "error",
-    "private-type": "error",
-    "valid-values-private": ["error", [
-      false
-    ]],
-
     "require-engines": "error",
     "engines-type": "error"
   }
