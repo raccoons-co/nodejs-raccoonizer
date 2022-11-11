@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Runs Node.js application at Heroku",
   "main": "EntryPoint.ts",
+  "types": "EntryPoint.d.ts",
+  "files": [ "dist/**/*" ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -46,6 +48,6 @@
     "typescript": "^4.8.4"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   }
 }
