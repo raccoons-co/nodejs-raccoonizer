@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-raccoonizer",
+  "name": "@raccoons-co/nodejs-raccoonizer",
   "version": "0.0.1",
   "description": "Runs Node.js application at Heroku",
   "main": "EntryPoint.ts",
