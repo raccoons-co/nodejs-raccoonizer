@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Runs Node.js application at Heroku",
   "main": "EntryPoint.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "nest build",
     "lint": "npm run lint.typescript && npm run lint.packagejson",
