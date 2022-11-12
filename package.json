@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/nodejs-raccoonizer",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Node.js microservices library",
   "files": [
     "lib/main"
