@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/nodejs-raccoonizer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node.js microservices library",
   "files": [
     "lib/"
@@ -14,9 +14,10 @@
     "lint": "npm run lint.typescript && npm run lint.packagejson",
     "lint.typescript": "eslint './**/*.ts'",
     "lint.packagejson": "npmPkgJsonLint .",
-    "this.raccoonizer.microservice": "node dist/EntryPoint",
+    "prepare": "npm run build",
     "start": "npm test && npm run this.raccoonizer.microservice",
-    "test": "npm run lint && npm run build"
+    "test": "npm run lint && npm run build",
+    "this.raccoonizer.microservice": "node dist/EntryPoint"
   },
   "repository": {
     "type": "git",
