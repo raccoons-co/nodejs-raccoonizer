@@ -1,8 +1,8 @@
-import Microservice from './src/Microservice';
-import ExpressMicroservice from './src/ExpressMicroservice';
-import HapiMicroservice from './src/HapiMicroservice';
-import KoaMicroservice from './src/KoaMicroservice';
-import NestFastifyMicroservice from './src/NestFastifyMicroservice';
+import Microservice from '../main/Microservice';
+import ExpressMicroservice from '../main/ExpressMicroservice';
+import HapiMicroservice from '../main/HapiMicroservice';
+import KoaMicroservice from '../main/KoaMicroservice';
+import NestFastifyMicroservice from '../main/NestFastifyMicroservice';
 import assert from 'node:assert/strict';
 
 try {

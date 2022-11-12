@@ -1,9 +1,9 @@
 {
   "name": "@raccoons-co/nodejs-raccoonizer",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Node.js microservices library",
   "files": [
-    "lib/"
+    "lib/main"
   ],
   "main": "lib/index",
   "publishConfig": {
@@ -18,7 +18,7 @@
     "prepare": "npm run build",
     "start": "npm test && npm run this.raccoonizer.microservice",
     "test": "npm run lint && npm run build",
-    "this.raccoonizer.microservice": "node dist/EntryPoint"
+    "this.raccoonizer.microservice": "node lib/test/EntryPoint"
   },
   "repository": {
     "type": "git",
