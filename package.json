@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Node.js microservices library",
   "files": [
-    "src"
+    "lib"
   ],
   "publishConfig": {
     "access": "public",
