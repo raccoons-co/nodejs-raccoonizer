@@ -1,10 +1,11 @@
 {
   "name": "@raccoons-co/nodejs-raccoonizer",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Node.js microservices library",
   "files": [
     "lib/"
   ],
+  "main": "lib/index",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
