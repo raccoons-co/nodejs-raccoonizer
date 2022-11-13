@@ -1,5 +1,4 @@
 import {
-  Microservice,
   KoaMicroservice,
   ExpressMicroservice,
   HapiMicroservice,

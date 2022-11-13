@@ -18,7 +18,7 @@ export default class YourKoaConfiguration implements NodejsFrameworkConfiguratio
 `EntryPoint.ts:`
 ```typescript
 import { Microservice, KoaMicroservice } from "@raccoons-co/nodejs-raccoonizer";
-import KoaConfiguration from "./KoaConfiguration";
+import YourKoaConfiguration from "./YourKoaConfiguration";
 import assert from 'node:assert/strict';
 
 try {

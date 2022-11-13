@@ -6,7 +6,7 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 
 /**
- * A  Nest Fastify NodeJS microservice and your configuration.
+ * A NestFastify NodeJS microservice and your configuration.
  */
 export default class NestFastifyMicroservice
   extends NodejsFramework<Promise<NestFastifyApplication>>

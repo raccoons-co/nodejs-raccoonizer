@@ -3,7 +3,7 @@
   "version": "0.0.15",
   "description": "Node.js microservices library",
   "files": [
-    "lib/main"
+    "lib/"
   ],
   "main": "lib/main/index",
   "publishConfig": {
@@ -30,7 +30,9 @@
     "framework",
     "koa",
     "hapi",
-    "express"
+    "express",
+    "nest",
+    "fastify"
   ],
   "author": "Raccoons <info@raccoons.co>",
   "license": "MIT",

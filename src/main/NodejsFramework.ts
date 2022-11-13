@@ -1,7 +1,8 @@
 import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
 
 /**
- * Represents NodeJS framework of specified type.
+ * Represents NodeJS framework of specified type with applied configuration.
+ * @see NodejsFrameworkConfiguration interface.
  */
 export default class NodejsFramework<T> {
 
