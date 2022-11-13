@@ -1,35 +1,33 @@
 # nodejs-raccoonizer
 
-`Raccoonizer` provides library of Node.js frameworks extentions to simplify microservices 
+`Raccoonizer` provides library of Node.js frameworks extentions to unify microservices 
 deployments.
 
-`MyKoa.ts:`
+`Implement YourKoaConfiguration.ts:`
 ```typescript
-import { KoaMicroservice } from '@raccoons-co/nodejs-raccoonizer';
+import { NodejsFrameworkConfiguration } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
 
-export default class MyKoa 
-  extends KoaMicroservice {
-
-  protected initConfiguration(){
-    this.instance()
-      .use(async ( ctx: Koa.Context ) => { ctx.body = "MyKoa is here"; } );
-    }
+export default class YourKoaConfiguration implements NodejsFrameworkConfiguration<Koa> {
+  applyTo( koaInstance: Koa ): void {
+    koaInstance
+      .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
+  }
 }
 ```
 `EntryPoint.ts:`
 ```typescript
-import MyKoa from './MyKoa';
+import { Microservice, KoaMicroservice } from "@raccoons-co/nodejs-raccoonizer";
+import KoaConfiguration from "./KoaConfiguration";
 import assert from 'node:assert/strict';
 
 try {
-  assert( process.env.PORT, "Fails if PORT environment variable do not exist." );
-  const atPort = Number( process.env.PORT );
-  new MyKoa( atPort ).deploy();
+    assert( process.env.PORT, "Fails if PORT environment variable do not exist." );
+    const atPort = Number( process.env.PORT );
+    new KoaMicroservice( atPort, new YourKoaConfiguration() ).deploy();
 } catch( exception ) {
-  console.log( exception );
+    console.log( exception );
 }
-
 ```
 `package.json:`
 ```

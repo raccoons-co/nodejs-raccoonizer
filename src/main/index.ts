@@ -1,19 +1,16 @@
-/**
- * Re-export classes to simplify imports
- * from:
- *   import KoaMicroservice from "@raccoons-co/nodejs-raccoonizer/lib/KoaMicroservice";
- * to:
- *   import { KoaMicroservice } from "@raccoons-co/nodejs-raccoonizer";
- */
+import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
+import Microservice from "./Microservice";
+import ExpressMicroservice from "./ExpressMicroservice";
+import KoaMicroservice from "./KoaMicroservice";
+import HapiMicroservice from "./HapiMicroservice";
+import NestFastifyMicroservice from "./NestFastifyMicroservice";
 
-import ExpressMicroservice from "./ExpressMicroservice"
-import HapiMicroservice from "./HapiMicroservice"
-import KoaMicroservice from "./KoaMicroservice"
-import NestFastifyMicroservice from "./NestFastifyMicroservice"
-
+//@PublicApi
 export {
+  NodejsFrameworkConfiguration,
+  Microservice,
+  KoaMicroservice,
   ExpressMicroservice,
   HapiMicroservice,
-  KoaMicroservice,
   NestFastifyMicroservice
 }

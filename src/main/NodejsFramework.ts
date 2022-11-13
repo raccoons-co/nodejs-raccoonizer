@@ -1,3 +1,5 @@
+import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
+
 /**
  * Represents NodeJS framework of specified type.
  */
@@ -6,19 +8,11 @@ export default class NodejsFramework<T> {
   private framework: T;
 
   /**
-   * Initiates instance with framework and its configuration.
+   * Initiates instance with framework and applies configuration.
    */
-  constructor( framework: T ) {
+  constructor( framework: T, configuration: NodejsFrameworkConfiguration<T> ) {
     this.framework = framework;
-    this.initConfiguration();
-  }
-
-  /**
-   * Handles initial framework configuration.
-   */
-   //@Override
-  protected initConfiguration(): void {
-    /*eslint no-empty-function: "off"*/
+    configuration.applyTo(framework);
   }
 
   /**

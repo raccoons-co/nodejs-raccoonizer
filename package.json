@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/nodejs-raccoonizer",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Node.js microservices library",
   "files": [
     "lib/main"
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "npm run lint.typescript && npm run lint.packagejson",
-    "lint.typescript": "eslint './**/*.ts'",
+    "lint.typescript": "eslint './src/**/*.ts'",
     "lint.packagejson": "npmPkgJsonLint .",
     "prepare": "npm run build",
     "start": "npm test && npm run this.raccoonizer.microservice",
@@ -24,6 +24,14 @@
     "type": "git",
     "url": "git+https://github.com/raccoons-co/nodejs-raccoonizer.git"
   },
+  "keywords": [
+    "microservice",
+    "nodejs",
+    "framework",
+    "koa",
+    "hapi",
+    "express"
+  ],
   "author": "Raccoons <info@raccoons.co>",
   "license": "MIT",
   "bugs": {

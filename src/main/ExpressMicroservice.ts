@@ -1,4 +1,5 @@
 import NodejsFramework from "./NodejsFramework";
+import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
 import express from "express";
 import Microservice from "./Microservice";
 
@@ -14,18 +15,9 @@ export default class ExpressMicroservice
   /**
    * Initiates Express framework and port number to listen.
    */
-  constructor(port: number) {
-    super(express());
+  constructor(port: number, configuration: NodejsFrameworkConfiguration<express.Express>) {
+    super(express(), configuration);
     this.port = port;
-  }
-
-  //@Override
-  protected initConfiguration(): void {
-    this.instance()
-      .get(
-        "/",
-        (req: express.Request, res: express.Response ) => { res.send("Hello World!"); }
-      );
   }
 
   //@Implement
