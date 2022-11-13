@@ -1,6 +1,6 @@
 # nodejs-raccoonizer
 
-`Raccoonizer` provides library of Node.js frameworks extentions to unify microservices 
+Library of Node.js frameworks extensions to unify microservices 
 deployments.
 
 `Implement YourKoaConfiguration.ts:`
