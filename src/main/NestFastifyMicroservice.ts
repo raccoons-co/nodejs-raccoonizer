@@ -1,12 +1,12 @@
 import NodejsFramework from "./NodejsFramework";
+import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
 import Microservice from "./Microservice";
-import WebAppModule from './WebAppModule';
 import { NestFastifyApplication } from '@nestjs/platform-fastify';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 
 /**
- * A  Nest Fastify NodeJS microservice and your configuration.
+ * A NestFastify NodeJS microservice and your configuration.
  */
 export default class NestFastifyMicroservice
   extends NodejsFramework<Promise<NestFastifyApplication>>
@@ -14,12 +14,17 @@ export default class NestFastifyMicroservice
 
   private port: number;
 
-  constructor(port: number) {
+  /**
+   * Initiates Nest Fastify framework and port number to listen.
+   */
+  constructor( port: number, configuration: NodejsFrameworkConfiguration<Promise<NestFastifyApplication>>, module: any) {
     super(
       NestFactory.create<NestFastifyApplication>(
-        WebAppModule,
+        module,
         new FastifyAdapter({ logger: true })
-    ));
+      ),
+      configuration
+    );
     this.port = port;
   }
 

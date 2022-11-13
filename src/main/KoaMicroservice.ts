@@ -1,4 +1,5 @@
 import NodejsFramework from "./NodejsFramework";
+import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
 import Koa from "koa";
 import Microservice from "./Microservice";
 
@@ -11,18 +12,14 @@ export default class KoaMicroservice
 
   private port: number;
 
-  constructor(port: number) {
-    super(new Koa());
+  /**
+   * Applies Koa framework and port number to listen.
+   */
+  constructor(port: number, configuration: NodejsFrameworkConfiguration<Koa>) {
+    super(new Koa(), configuration);
     this.port = port;
   }
 
-  //@Override
-  protected initConfiguration(): void {
-    this.instance()
-      .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
-  }
-
-  //@Implementation
   public deploy(): void {
     this.instance()
       .listen( this.port, () => {
