@@ -1,16 +1,27 @@
-import NodejsFrameworkConfiguration from "./NodejsFrameworkConfiguration";
-import Microservice from "./Microservice";
-import ExpressMicroservice from "./ExpressMicroservice";
-import KoaMicroservice from "./KoaMicroservice";
-import HapiMicroservice from "./HapiMicroservice";
-import NestFastifyMicroservice from "./NestFastifyMicroservice";
+import MicroserviceFactory from "./MicroserviceFactory";
+
+import ExpressMicroserviceFactory from "./express/ExpressMicroserviceFactory";
+import ExpressMicroservice from "./express/ExpressMicroservice";
+import ExpressFramework from "./express/ExpressFramework";
+
+import HapiMicroserviceFactory from "./hapi/HapiMicroserviceFactory";
+import HapiMicroservice from "./hapi/HapiMicroservice";
+import HapiFramework from "./hapi/HapiFramework";
+
+import KoaMicroserviceFactory from "./koa/KoaMicroserviceFactory";
+import KoaMicroservice from "./koa/KoaMicroservice";
+import KoaFramework from "./koa/KoaFramework";
 
 //@PublicApi
 export {
-  NodejsFrameworkConfiguration,
-  Microservice,
-  KoaMicroservice,
+  MicroserviceFactory,
+  ExpressMicroserviceFactory,
   ExpressMicroservice,
+  ExpressFramework,
+  HapiMicroserviceFactory,
   HapiMicroservice,
-  NestFastifyMicroservice
+  HapiFramework,
+  KoaMicroserviceFactory,
+  KoaMicroservice,
+  KoaFramework
 }
