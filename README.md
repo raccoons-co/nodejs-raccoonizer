@@ -3,7 +3,7 @@
 Library of Node.js frameworks extensions to unify microservices 
 deployments.
 
-`Implement YourKoaConfiguration.ts:`
+Implement `YourKoaConfiguration.ts`:
 ```typescript
 import { KoaMicroserviceFactory, KoaFramework } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
@@ -17,9 +17,9 @@ export default class YourKoaConfiguration
   }
 }
 ```
-`EntryPoint.ts:`
+Implement your main `EntryPoint.ts`:
 ```typescript
-import { MicroserviceFactory } from "../main/index";
+import { MicroserviceFactory } from "@raccoons-co/nodejs-raccoonizer";
 import YourKoaConfiguration from "./YourKoaConfiguration";
 import assert from 'node:assert/strict';
 
@@ -35,7 +35,7 @@ try {
 }
 
 ```
-`package.json:`
+Run microservice with `package.json` script:
 ```
 "scripts": {
   "build": "tsc",
