@@ -28,7 +28,7 @@ try {
   const atPort = Number( process.env.PORT );
 
   new MicroserviceFactory( new YourKoaConfiguration() )
-    .microservice( atPort + 1 )
+    .microservice( atPort )
     .deploy();
 } catch( exception ) {
     console.log( exception );
