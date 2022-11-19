@@ -1,12 +1,13 @@
-import AbstractMicroserviceConfiguration from "../AbstractMicroserviceConfiguration";
+import AbstractInitCommand from "../AbstractInitCommand";
 import AbstractMicroserviceFactory from "../AbstractMicroserviceFactory";
 import ExpressMicroservice from "./ExpressMicroservice";
+import express from "express";
 
 /**
  * Factory makes `ExpressMicroservice` objects.
  */
 export default abstract class ExpressMicroserviceFactory
-  extends AbstractMicroserviceConfiguration
+  extends AbstractInitCommand<express.Express>
   implements AbstractMicroserviceFactory {
 
   /**

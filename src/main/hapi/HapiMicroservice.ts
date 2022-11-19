@@ -1,13 +1,14 @@
-import HapiFramework from "./HapiFramework";
+import NodejsMicroservice from "../NodejsMicroservice";
+import Hapi from "@hapi/hapi";
 import Microservice from "../Microservice";
-import AbstractMicroserviceConfiguration from "../AbstractMicroserviceConfiguration";
-
+import Command from "../Command";
+import HapiDeployCommand from "./HapiDeployCommand";
 
 /**
  * A Hapi Nodejs microservice and your configuration.
  */
 export default class HapiMicroservice
-  extends HapiFramework
+  extends NodejsMicroservice<Hapi.Server>
   implements Microservice {
 
   private port: number;
@@ -15,16 +16,13 @@ export default class HapiMicroservice
   /**
    * Initiates instance with port number to listen and your configuration.
    */
-  constructor( port: number, configuration: AbstractMicroserviceConfiguration ) {
-    super();
+  constructor( port: number, command: Command<Hapi.Server> ) {
+    super(new Hapi.Server( { port: port } ) );
     this.port = port;
-    configuration.accept(this);
+    this.handle( command );
   }
 
-  //@Implement
   public deploy(): void {
-//     this.instance().options.port( this.port );
-    this.application().start();
-    console.log("%s listening on port %s", this.constructor.name, this.application().info.port );
+    this.handle( new HapiDeployCommand() );
   }
 }

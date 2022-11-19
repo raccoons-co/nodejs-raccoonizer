@@ -1,12 +1,14 @@
-import AbstractMicroserviceConfiguration from "../AbstractMicroserviceConfiguration";
+import AbstractInitCommand from "../AbstractInitCommand";
 import AbstractMicroserviceFactory from "../AbstractMicroserviceFactory";
 import HapiMicroservice from "./HapiMicroservice";
+import Hapi from "@hapi/hapi";
+
 
 /**
  * Factory makes HapiMicroservice objects.
  */
 export default abstract class HapiMicroserviceFactory
-  extends AbstractMicroserviceConfiguration
+  extends AbstractInitCommand<Hapi.Server>
   implements AbstractMicroserviceFactory {
 
   /**
