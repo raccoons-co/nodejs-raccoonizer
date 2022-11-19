@@ -11,7 +11,7 @@ export default class MicroserviceFactory {
   private factory: AbstractMicroserviceFactory;
 
   /**
-   * Initiated concrete microservice factory.
+   * Initiates concrete microservice factory.
    */
   constructor( factory: AbstractMicroserviceFactory ) {
     this.factory = factory;

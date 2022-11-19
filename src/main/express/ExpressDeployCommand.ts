@@ -3,7 +3,7 @@ import NodejsMicroservice from "../NodejsMicroservice";
 import express from "express";
 
 export default class ExpressDeployCommand
-  implements Command<express.Express> {
+  implements Command<NodejsMicroservice<express.Express>> {
 
   private port: number;
 
@@ -11,7 +11,7 @@ export default class ExpressDeployCommand
     this.port = port;
   }
 
-  public accept( microservice: NodejsMicroservice<express.Express> ){
+  public execute( microservice: NodejsMicroservice<express.Express> ){
     microservice.application()
       .listen( this.port, () => {
         console.log( "%s listening on port %s", microservice.constructor.name, this.port );

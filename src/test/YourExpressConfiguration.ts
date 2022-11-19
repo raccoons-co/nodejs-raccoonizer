@@ -4,7 +4,7 @@ import express from "express";
 export default class YourExpressConfiguration
   extends ExpressMicroserviceFactory {
 
-  accept( microservice: NodejsMicroservice<express.Express> ): void {
+  public execute( microservice: NodejsMicroservice<express.Express> ): void {
     microservice.application()
       .get(
         "/",

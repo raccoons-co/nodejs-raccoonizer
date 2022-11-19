@@ -16,12 +16,12 @@ export default class ExpressMicroservice
   /**
    * Initiates instance with port number to listen and your configuration.
    */
-  constructor(port: number, command: Command<express.Express> ) {
+  constructor(port: number, command: Command<NodejsMicroservice<express.Express>> ) {
     super( express() );
     this.port = port;
-    this.handle(command)
+    command.execute( this );
   }
   public deploy(): void {
-    this.handle( new ExpressDeployCommand( this.port ) );
+    new ExpressDeployCommand( this.port ).execute( this ) ;
   }
 }

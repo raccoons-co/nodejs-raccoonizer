@@ -2,8 +2,8 @@ import Command from "../Command";
 import NodejsMicroservice from "../NodejsMicroservice";
 import Koa from "koa";
 
-export default class KoaDeployCommand
-  implements Command<Koa> {
+export default class KoaDeployWorker
+  implements Command<NodejsMicroservice<Koa>> {
 
   private port: number;
 
@@ -11,7 +11,7 @@ export default class KoaDeployCommand
     this.port = port;
   }
 
-  public accept( microservice: NodejsMicroservice<Koa> ){
+  public execute( microservice: NodejsMicroservice<Koa> ){
     microservice.application()
       .listen( this.port, () => {
         console.log("%s listening on port %s", microservice.constructor.name, this.port );

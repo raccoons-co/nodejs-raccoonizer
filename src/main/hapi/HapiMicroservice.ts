@@ -16,13 +16,13 @@ export default class HapiMicroservice
   /**
    * Initiates instance with port number to listen and your configuration.
    */
-  constructor( port: number, command: Command<Hapi.Server> ) {
+  constructor( port: number, command: Command<NodejsMicroservice<Hapi.Server>> ) {
     super(new Hapi.Server( { port: port } ) );
     this.port = port;
-    this.handle( command );
+    command.execute( this );
   }
 
   public deploy(): void {
-    this.handle( new HapiDeployCommand() );
+    new HapiDeployCommand().execute( this );
   }
 }

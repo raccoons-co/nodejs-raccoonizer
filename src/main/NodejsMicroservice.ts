@@ -1,7 +1,5 @@
-import Command from "./Command";
-
 /**
- * Represents abstract framework.
+ * Represents abstract Nodejs microservice of some application type.
  */
 export default abstract class NodejsMicroservice<T> {
 
@@ -19,12 +17,5 @@ export default abstract class NodejsMicroservice<T> {
    */
   public application(): T {
     return this.app;
-  }
-
-  /**
-   * Handles microservice control command processing.
-   */
-  protected handle( command: Command<T> ){
-    command.accept(this);
   }
 }

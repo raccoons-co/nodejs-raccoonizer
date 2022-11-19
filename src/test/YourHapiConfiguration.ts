@@ -4,7 +4,7 @@ import Hapi from "@hapi/hapi";
 export default class YourHapiConfiguration
   extends HapiMicroserviceFactory {
 
-  accept( microservice: NodejsMicroservice<Hapi.Server> ): void {
+  public execute( microservice: NodejsMicroservice<Hapi.Server> ): void {
     microservice.application()
       .route({
         method: 'GET',

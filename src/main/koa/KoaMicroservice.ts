@@ -16,13 +16,16 @@ export default class KoaMicroservice
   /**
    * Initiates instance with port number to listen and your configuration.
    */
-  constructor( port: number, command: Command<Koa> ) {
+  constructor( port: number, command: Command<NodejsMicroservice<Koa>> ) {
     super( new Koa() );
     this.port = port;
-    this.handle( command );
+    command.execute( this );
   }
 
+  /**
+   * Puts the microservice into operation.
+   */
   public deploy(): void {
-    this.handle( new KoaDeployCommand(this.port) );
+    new KoaDeployCommand( this.port ).execute( this );
   }
 }

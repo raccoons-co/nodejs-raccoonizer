@@ -1,4 +1,4 @@
-import AbstractInitCommand from "../AbstractInitCommand";
+import AbstractCommand from "../AbstractCommand";
 import AbstractMicroserviceFactory from "../AbstractMicroserviceFactory";
 import KoaMicroservice from "./KoaMicroservice";
 import Koa from "koa";
@@ -7,7 +7,7 @@ import Koa from "koa";
  * Factory makes `KoaMicroservice` objects.
  */
 export default abstract class KoaMicroserviceFactory
-  extends AbstractInitCommand<Koa>
+  extends AbstractCommand<Koa>
   implements AbstractMicroserviceFactory {
 
   /**
