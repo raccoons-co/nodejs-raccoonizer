@@ -1,8 +1,16 @@
 import Command from "./Command";
-import NodejsMicroservice from "./NodejsMicroservice";
 
+/**
+ * Defines interface for your configuration class.
+ */
 export default abstract class AbstractCommand<T>
-  implements Command<NodejsMicroservice<T>> {
+  implements Command<T> {
 
-  abstract execute( microservice: NodejsMicroservice<T> ): void;
+  /**
+   * Executes initial instructions to setup microservice.
+   *
+   * @typeParam T The type of microservice that command supports.
+   * @param microservice The microservice that delegates to perform configuration.
+   */
+  abstract execute( microservice: T ): void;
 }

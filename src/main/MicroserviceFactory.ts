@@ -8,10 +8,12 @@ import Microservice from "./Microservice";
  */
 export default class MicroserviceFactory {
 
+  /** Concrete microservice factory */
   private factory: AbstractMicroserviceFactory;
 
   /**
    * Initiates concrete microservice factory.
+   * @param factory
    */
   constructor( factory: AbstractMicroserviceFactory ) {
     this.factory = factory;

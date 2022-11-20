@@ -12,13 +12,15 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "npm run lint.typescript && npm run lint.packagejson",
-    "lint.typescript": "eslint './src/**/*.ts'",
+    "build.docs": "typedoc ./src/main/index.ts",
     "lint.packagejson": "npmPkgJsonLint .",
+    "lint.typescript": "eslint './src/**/*.ts'",
+    "prebuild": "rimraf ./lib",
+    "prebuild.docs": "rimraf ./docs",
     "prepare": "npm run build",
-    "start": "npm test && npm run this.raccoonizer.microservice",
-    "test": "npm run lint && npm run build",
-    "this.raccoonizer.microservice": "node lib/test/EntryPoint"
+    "preprepare": "npm-run-all lint.*",
+    "prestart": "npm ci",
+    "start": "node lib/test/EntryPoint"
   },
   "repository": {
     "type": "git",
@@ -51,7 +53,9 @@
     "@typescript-eslint/parser": "^5.39.0",
     "eslint": "^8.27.0",
     "npm-package-json-lint": "^6.3.0",
-    "typescript": "^4.8.4"
+    "npm-run-all": "^4.1.5",
+    "typedoc": "^0.23.21",
+    "typescript": "^4.9.3"
   },
   "engines": {
     "node": ">=16.x"

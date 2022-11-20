@@ -1,18 +1,21 @@
 # nodejs-raccoonizer
 
-Library of Node.js frameworks extensions to unify microservices 
-deployments.
+A library for unified deploying of Nodejs microservices.
 
+Install library with
+```shell
+% npm install @raccoons-co/nodejs-raccoonizer
+```
 Implement `YourKoaConfiguration.ts`:
 ```typescript
-import { KoaMicroserviceFactory, KoaFramework } from "@raccoons-co/nodejs-raccoonizer";
+import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
 
 export default class YourKoaConfiguration
   extends KoaMicroserviceFactory {
 
-  accept( koaFramework: KoaFramework ): void {
-    koaFramework.application()
+  public execute( microservice: NodejsMicroservice<Koa> ): void {
+    microservice.application()
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
 }
@@ -33,13 +36,14 @@ try {
 } catch( exception ) {
     console.log( exception );
 }
-
 ```
 Run microservice with `package.json` script:
 ```
 "scripts": {
   "build": "tsc",
-  "start": "npm run build && npm run this.raccoonizer.microservice"
-  "this.raccoonizer.microservice": "node dist/EntryPoint",
+  "prebuild": "rimraf ./dist",
+  "prepare": "npm run build",
+  "prestart": "npm ci",
+  "start": "node dist/EntryPoint",
 }
 ```

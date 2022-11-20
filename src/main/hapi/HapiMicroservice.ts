@@ -4,17 +4,21 @@ import Microservice from "../Microservice";
 import Command from "../Command";
 import HapiDeployCommand from "./HapiDeployCommand";
 
-/**
- * A Hapi Nodejs microservice and your configuration.
- */
+ /**
+  * A Hapi Nodejs microservice that applies your configuration class.
+  */
 export default class HapiMicroservice
   extends NodejsMicroservice<Hapi.Server>
   implements Microservice {
 
+  /** The microservice will listen this port. */
   private port: number;
 
   /**
-   * Initiates instance with port number to listen and your configuration.
+   * Initiates instance with port number to listen and your configuration class instance.
+   *
+   * @param port The microservice will listen this port.
+   * @param command Your configuration class instance.
    */
   constructor( port: number, command: Command<NodejsMicroservice<Hapi.Server>> ) {
     super(new Hapi.Server( { port: port } ) );
@@ -22,6 +26,9 @@ export default class HapiMicroservice
     command.execute( this );
   }
 
+  /**
+   * Puts the microservice into operation.
+   */
   public deploy(): void {
     new HapiDeployCommand().execute( this );
   }
