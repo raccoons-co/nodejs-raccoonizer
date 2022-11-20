@@ -15,12 +15,14 @@
     "build.docs": "typedoc ./src/main/index.ts",
     "lint.packagejson": "npmPkgJsonLint .",
     "lint.typescript": "eslint './src/**/*.ts'",
+    "postbuild.docs": "open ./docs/index.html",
     "prebuild": "rimraf ./lib",
     "prebuild.docs": "rimraf ./docs",
     "prepare": "npm run build",
     "preprepare": "npm-run-all lint.*",
     "prestart": "npm ci",
-    "start": "node lib/test/EntryPoint"
+    "start": "node lib/test/EntryPoint",
+    "test": "echo ImplementYourTests"
   },
   "repository": {
     "type": "git",
