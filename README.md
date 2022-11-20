@@ -6,7 +6,6 @@ Install library with
 ```shell
 % npm install @raccoons-co/nodejs-raccoonizer
 ```
-Implement `YourKoaConfiguration.ts`:
 ```typescript
 import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
