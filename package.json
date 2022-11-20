@@ -21,6 +21,7 @@
     "prepare": "npm run build",
     "preprepare": "npm-run-all lint.*",
     "prestart": "npm ci",
+    "pretest": "npm ci",
     "start": "node lib/test/EntryPoint",
     "test": "echo ImplementYourTests"
   },
