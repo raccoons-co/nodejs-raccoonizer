@@ -1,30 +1,35 @@
-import ExpressFramework from "./ExpressFramework";
+import NodejsMicroservice from "../NodejsMicroservice";
+import express from "express";
 import Microservice from "../Microservice";
-import AbstractMicroserviceConfiguration from "../AbstractMicroserviceConfiguration";
+import Command from "../Command";
+import ExpressDeployCommand from "./ExpressDeployCommand";
 
 /**
- * An Express Nodejs microservice and your configuration.
+ * A Express Nodejs microservice that applies your configuration class.
  */
 export default class ExpressMicroservice
-  extends ExpressFramework
+  extends NodejsMicroservice<express.Express>
   implements Microservice {
 
+  /** The microservice will listen this port. */
   private port: number;
 
   /**
-   * Initiates instance with port number to listen and your configuration.
+   * Initiates instance with port number to listen and your configuration class instance.
+   *
+   * @param port The microservice will listen this port.
+   * @param command Your configuration class instance.
    */
-  constructor(port: number, configuration: AbstractMicroserviceConfiguration ) {
-    super();
+  constructor(port: number, command: Command<NodejsMicroservice<express.Express>> ) {
+    super( express() );
     this.port = port;
-    configuration.accept(this);
+    command.execute( this );
   }
 
-  //@Implement
+  /**
+   * Puts the microservice into operation.
+   */
   public deploy(): void {
-    this.application()
-      .listen( this.port, () => {
-        console.log( "%s listening on port %s", this.constructor.name, this.port );
-      });
+    new ExpressDeployCommand( this.port ).execute( this ) ;
   }
 }
