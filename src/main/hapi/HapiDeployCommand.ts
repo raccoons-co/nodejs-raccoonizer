@@ -1,4 +1,4 @@
-import Command from "../Command";
+import AbstractCommand from "../AbstractCommand";
 import NodejsMicroservice from "../NodejsMicroservice";
 import Hapi from "@hapi/hapi";
 
@@ -6,7 +6,7 @@ import Hapi from "@hapi/hapi";
  * Puts Hapi microservice into operation.
  */
 export default class HapiDeployCommand
-  implements Command<NodejsMicroservice<Hapi.Server>> {
+  extends AbstractCommand<NodejsMicroservice<Hapi.Server>> {
 
   /**
    * Starts to listen ports.

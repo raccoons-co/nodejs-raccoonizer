@@ -42,10 +42,12 @@ try {
 Run microservice with `package.json` script:
 ```
 "scripts": {
-  "build": "tsc",
-  "prebuild": "rimraf ./dist",
-  "prepare": "npm run build",
-  "prestart": "npm ci",
-  "start": "node dist/EntryPoint",
+    "build": "tsc",
+    "prebuild": "rimraf ./lib",
+    "prestart": "npm run test",
+    "pretest": "npm run build",
+    "start": "npm run this.microservice",
+    "test": "echo ImplementYourTests",
+    "this.microservice": "node lib/test/EntryPoint"
 }
 ```

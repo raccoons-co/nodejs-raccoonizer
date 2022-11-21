@@ -6,7 +6,6 @@
  * @public
  */
 import AbstractMicroserviceFactory from "./AbstractMicroserviceFactory";
-import Command from "./Command"
 import Microservice from "./Microservice"
 import MicroserviceFactory from "./MicroserviceFactory";
 import NodejsMicroservice from "./NodejsMicroservice";
@@ -22,7 +21,6 @@ import KoaMicroservice from "./koa/KoaMicroservice";
 
 export {
   AbstractMicroserviceFactory,
-  Command,
   Microservice,
   MicroserviceFactory,
   NodejsMicroservice,

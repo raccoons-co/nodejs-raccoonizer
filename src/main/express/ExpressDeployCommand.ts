@@ -1,4 +1,4 @@
-import Command from "../Command";
+import AbstractCommand from "../AbstractCommand";
 import NodejsMicroservice from "../NodejsMicroservice";
 import express from "express";
 
@@ -6,7 +6,7 @@ import express from "express";
  * Puts Express microservice into operation.
  */
 export default class ExpressDeployCommand
-  implements Command<NodejsMicroservice<express.Express>> {
+  extends AbstractCommand<NodejsMicroservice<express.Express>> {
 
   /** The microservice will listen this port. */
   private port: number;
@@ -17,6 +17,7 @@ export default class ExpressDeployCommand
    * @param port The microservice will listen this port.
    */
   constructor( port: number ) {
+    super();
     this.port = port;
   }
 

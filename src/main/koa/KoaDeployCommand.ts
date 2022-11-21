@@ -1,4 +1,4 @@
-import Command from "../Command";
+import AbstractCommand from "../AbstractCommand";
 import NodejsMicroservice from "../NodejsMicroservice";
 import Koa from "koa";
 
@@ -6,7 +6,7 @@ import Koa from "koa";
  * Puts Koa microservice into operation.
  */
 export default class KoaDeployCommand
-  implements Command<NodejsMicroservice<Koa>> {
+  extends AbstractCommand<NodejsMicroservice<Koa>> {
 
   /** The microservice will listen this port. */
   private port: number;
@@ -17,6 +17,7 @@ export default class KoaDeployCommand
    * @param port The microservice will listen this port.
    */
   constructor( port: number ) {
+    super();
     this.port = port;
   }
 

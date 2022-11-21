@@ -1,10 +1,7 @@
-import Command from "./Command";
-
 /**
  * Defines interface for your configuration class.
  */
-export default abstract class AbstractCommand<T>
-  implements Command<T> {
+export default abstract class AbstractCommand<T> {
 
   /**
    * Executes initial instructions to setup microservice.
