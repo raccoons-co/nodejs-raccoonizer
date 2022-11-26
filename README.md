@@ -1,6 +1,6 @@
 # nodejs-raccoonizer
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/nodejs-raccoonizer/tree/feature%2Fcircleci.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/nodejs-raccoonizer/tree/feature%2Fcircleci)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/nodejs-raccoonizer/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/nodejs-raccoonizer/tree/main)
 
 A library for unified deploying of Nodejs microservices.
 
@@ -8,6 +8,7 @@ Install library with
 ```shell
 % npm install @raccoons-co/nodejs-raccoonizer
 ```
+
 Implement `YourKoaConfiguration.ts`:
 ```typescript
 import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
