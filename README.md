@@ -1,11 +1,14 @@
 # nodejs-raccoonizer
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/nodejs-raccoonizer/tree/feature%2Fcircleci.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/nodejs-raccoonizer/tree/feature%2Fcircleci)
+
 A library for unified deploying of Nodejs microservices.
 
 Install library with
 ```shell
 % npm install @raccoons-co/nodejs-raccoonizer
 ```
+Implement `YourKoaConfiguration.ts`:
 ```typescript
 import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
@@ -39,10 +42,12 @@ try {
 Run microservice with `package.json` script:
 ```
 "scripts": {
-  "build": "tsc",
-  "prebuild": "rimraf ./dist",
-  "prepare": "npm run build",
-  "prestart": "npm ci",
-  "start": "node dist/EntryPoint",
+    "build": "tsc",
+    "prebuild": "rimraf ./lib",
+    "prestart": "npm run test",
+    "pretest": "npm run build",
+    "start": "npm run this.microservice",
+    "test": "echo ImplementYourTests",
+    "this.microservice": "node lib/test/EntryPoint"
 }
 ```
