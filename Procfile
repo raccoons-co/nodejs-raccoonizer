@@ -1,1 +1,1 @@
-web: npm run this.raccoonizer.microservice
+web: npm run this.microservice

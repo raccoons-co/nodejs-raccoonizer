@@ -1,27 +1,33 @@
+// Copyright (c) 2022 Raccoons. All rights reserved. Licensed under the MIT license.
+/**
+ * A library for unified deploying of Nodejs microservices.
+ *
+ * @packageDocumentation
+ * @public
+ */
+import AbstractMicroserviceFactory from "./AbstractMicroserviceFactory";
+import Microservice from "./Microservice"
 import MicroserviceFactory from "./MicroserviceFactory";
+import NodejsMicroservice from "./NodejsMicroservice";
 
 import ExpressMicroserviceFactory from "./express/ExpressMicroserviceFactory";
 import ExpressMicroservice from "./express/ExpressMicroservice";
-import ExpressFramework from "./express/ExpressFramework";
 
 import HapiMicroserviceFactory from "./hapi/HapiMicroserviceFactory";
 import HapiMicroservice from "./hapi/HapiMicroservice";
-import HapiFramework from "./hapi/HapiFramework";
 
 import KoaMicroserviceFactory from "./koa/KoaMicroserviceFactory";
 import KoaMicroservice from "./koa/KoaMicroservice";
-import KoaFramework from "./koa/KoaFramework";
 
-//@PublicApi
 export {
+  AbstractMicroserviceFactory,
+  Microservice,
   MicroserviceFactory,
+  NodejsMicroservice,
   ExpressMicroserviceFactory,
   ExpressMicroservice,
-  ExpressFramework,
   HapiMicroserviceFactory,
   HapiMicroservice,
-  HapiFramework,
   KoaMicroserviceFactory,
-  KoaMicroservice,
-  KoaFramework
+  KoaMicroservice
 }

@@ -1,18 +1,24 @@
 # nodejs-raccoonizer
 
-Library of Node.js frameworks extensions to unify microservices 
-deployments.
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/nodejs-raccoonizer/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/nodejs-raccoonizer/tree/main)
+
+A library for unified deploying of Nodejs microservices.
+
+Install library with
+```shell
+% npm install @raccoons-co/nodejs-raccoonizer
+```
 
 Implement `YourKoaConfiguration.ts`:
 ```typescript
-import { KoaMicroserviceFactory, KoaFramework } from "@raccoons-co/nodejs-raccoonizer";
+import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
 
 export default class YourKoaConfiguration
   extends KoaMicroserviceFactory {
 
-  accept( koaFramework: KoaFramework ): void {
-    koaFramework.application()
+  public execute( microservice: NodejsMicroservice<Koa> ): void {
+    microservice.application()
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
 }
@@ -33,13 +39,16 @@ try {
 } catch( exception ) {
     console.log( exception );
 }
-
 ```
 Run microservice with `package.json` script:
 ```
 "scripts": {
-  "build": "tsc",
-  "start": "npm run build && npm run this.raccoonizer.microservice"
-  "this.raccoonizer.microservice": "node dist/EntryPoint",
+    "build": "tsc",
+    "prebuild": "rimraf ./lib",
+    "prestart": "npm run test",
+    "pretest": "npm run build",
+    "start": "npm run this.microservice",
+    "test": "echo ImplementYourTests",
+    "this.microservice": "node lib/test/EntryPoint"
 }
 ```

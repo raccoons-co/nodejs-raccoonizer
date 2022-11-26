@@ -1,10 +1,10 @@
 /**
- * Microservice interface
+ * Describes supported by microservice operations.
  */
 export default interface Microservice {
-
   /**
-   * Bind configured framework to port and start to listen.
+   * Puts the microservice into operation.
+   * Usually binds configured microservice to port and start to listen.
    */
   deploy(): void;
 }
