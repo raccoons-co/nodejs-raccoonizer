@@ -27,7 +27,7 @@ Implement your main `EntryPoint.ts`:
 ```typescript
 import { MicroserviceFactory } from "@raccoons-co/nodejs-raccoonizer";
 import YourKoaConfiguration from "./YourKoaConfiguration";
-import assert from 'node:assert/strict';
+import assert from "node:assert/strict";
 
 try {
   assert( process.env.PORT, "Fails if PORT environment variable do not exist." );
@@ -44,7 +44,6 @@ Run microservice with `package.json` script:
 ```
 "scripts": {
     "build": "tsc",
-    "prebuild": "rimraf ./lib",
     "prestart": "npm run test",
     "pretest": "npm run build",
     "start": "npm run this.microservice",

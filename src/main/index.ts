@@ -19,6 +19,9 @@ import HapiMicroservice from "./hapi/HapiMicroservice";
 import KoaMicroserviceFactory from "./koa/KoaMicroserviceFactory";
 import KoaMicroservice from "./koa/KoaMicroservice";
 
+import NestFastifyMicroserviceFactory from "./nestfastify/NestFastifyMicroserviceFactory";
+import NestFastifyMicroservice from "./nestfastify/NestFastifyMicroservice";
+
 export {
   AbstractMicroserviceFactory,
   Microservice,
@@ -29,5 +32,7 @@ export {
   HapiMicroserviceFactory,
   HapiMicroservice,
   KoaMicroserviceFactory,
-  KoaMicroservice
+  KoaMicroservice,
+  NestFastifyMicroserviceFactory,
+  NestFastifyMicroservice
 }
