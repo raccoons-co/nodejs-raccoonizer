@@ -11,23 +11,24 @@ Install library with
 
 Implement `YourKoaConfiguration.ts`:
 ```typescript
-import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
+import { KoaMicroserviceFactory, KoaMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
 
 export default class YourKoaConfiguration
   extends KoaMicroserviceFactory {
 
-  public execute( microservice: NodejsMicroservice<Koa> ): void {
+  public execute( microservice: KoaMicroservice ): void {
     microservice.application()
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
+}
 }
 ```
 Implement your main `EntryPoint.ts`:
 ```typescript
 import { MicroserviceFactory } from "@raccoons-co/nodejs-raccoonizer";
 import YourKoaConfiguration from "./YourKoaConfiguration";
-import assert from 'node:assert/strict';
+import assert from "node:assert/strict";
 
 try {
   assert( process.env.PORT, "Fails if PORT environment variable do not exist." );
@@ -44,7 +45,6 @@ Run microservice with `package.json` script:
 ```
 "scripts": {
     "build": "tsc",
-    "prebuild": "rimraf ./lib",
     "prestart": "npm run test",
     "pretest": "npm run build",
     "start": "npm run this.microservice",

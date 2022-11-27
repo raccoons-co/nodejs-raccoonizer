@@ -20,7 +20,7 @@ export default class KoaMicroservice
    * @param port The microservice will listen this port.
    * @param command Your configuration class instance.
    */
-  constructor( port: number, command: AbstractCommand<NodejsMicroservice<Koa>> ) {
+  constructor( port: number, command: AbstractCommand<KoaMicroservice> ) {
     super( new Koa() );
     this.port = port;
     command.execute( this );

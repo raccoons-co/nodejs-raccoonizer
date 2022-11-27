@@ -1,11 +1,11 @@
 import AbstractCommand from "../AbstractCommand";
-import ExpressMicroservice from "./ExpressMicroservice";
+import NestFastifyMicroservice from "./NestFastifyMicroservice";
 
 /**
- * Puts Express microservice into operation.
+ * Puts NestFastify microservice into operation.
  */
-export default class ExpressDeployCommand
-  extends AbstractCommand<ExpressMicroservice> {
+export default class NestFastifyDeployCommand
+  extends AbstractCommand<NestFastifyMicroservice> {
 
   /** The microservice will listen this port. */
   private port: number;
@@ -25,10 +25,13 @@ export default class ExpressDeployCommand
    *
    * @param microservice The microservice that delegates to perform deploy.
    */
-  public execute( microservice: ExpressMicroservice ){
+  public execute( microservice: NestFastifyMicroservice ) {
     microservice.application()
-      .listen( this.port, () => {
-        console.log( "%s listening on port %s", microservice.constructor.name, this.port );
+      .then((app) => {
+        app.listen(
+          this.port,
+          () => { console.log("%s listening on port %s", microservice.constructor.name, this.port ) }
+        );
       });
   }
 }

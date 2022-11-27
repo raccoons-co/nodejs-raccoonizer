@@ -20,7 +20,7 @@ export default class HapiMicroservice
    * @param port The microservice will listen this port.
    * @param command Your configuration class instance.
    */
-  constructor( port: number, command: AbstractCommand<NodejsMicroservice<Hapi.Server>> ) {
+  constructor( port: number, command: AbstractCommand<HapiMicroservice> ) {
     super(new Hapi.Server( { port: port } ) );
     this.port = port;
     command.execute( this );

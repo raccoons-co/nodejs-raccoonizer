@@ -1,14 +1,12 @@
 import AbstractCommand from "../AbstractCommand";
-import NodejsMicroservice from "../NodejsMicroservice"
 import AbstractMicroserviceFactory from "../AbstractMicroserviceFactory";
 import KoaMicroservice from "./KoaMicroservice";
-import Koa from "koa";
 
 /**
  * This factory makes {@link KoaMicroservice} objects.
  */
 export default abstract class KoaMicroserviceFactory
-  extends AbstractCommand<NodejsMicroservice<Koa>>
+  extends AbstractCommand<KoaMicroservice>
   implements AbstractMicroserviceFactory {
 
   /**

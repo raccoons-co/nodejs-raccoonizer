@@ -5,10 +5,8 @@
  * @packageDocumentation
  * @public
  */
-import AbstractMicroserviceFactory from "./AbstractMicroserviceFactory";
-import Microservice from "./Microservice"
 import MicroserviceFactory from "./MicroserviceFactory";
-import NodejsMicroservice from "./NodejsMicroservice";
+import Microservice from "./Microservice"
 
 import ExpressMicroserviceFactory from "./express/ExpressMicroserviceFactory";
 import ExpressMicroservice from "./express/ExpressMicroservice";
@@ -19,15 +17,18 @@ import HapiMicroservice from "./hapi/HapiMicroservice";
 import KoaMicroserviceFactory from "./koa/KoaMicroserviceFactory";
 import KoaMicroservice from "./koa/KoaMicroservice";
 
+import NestFastifyMicroserviceFactory from "./nestfastify/NestFastifyMicroserviceFactory";
+import NestFastifyMicroservice from "./nestfastify/NestFastifyMicroservice";
+
 export {
-  AbstractMicroserviceFactory,
-  Microservice,
   MicroserviceFactory,
-  NodejsMicroservice,
+  Microservice,
   ExpressMicroserviceFactory,
   ExpressMicroservice,
   HapiMicroserviceFactory,
   HapiMicroservice,
   KoaMicroserviceFactory,
-  KoaMicroservice
+  KoaMicroservice,
+  NestFastifyMicroserviceFactory,
+  NestFastifyMicroservice
 }

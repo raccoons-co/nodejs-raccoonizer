@@ -1,10 +1,10 @@
-import { ExpressMicroserviceFactory, NodejsMicroservice  } from "../main/index";
+import { ExpressMicroserviceFactory, ExpressMicroservice  } from "../main/index";
 import express from "express";
 
 export default class YourExpressConfiguration
   extends ExpressMicroserviceFactory {
 
-  public execute( microservice: NodejsMicroservice<express.Express> ): void {
+  public execute( microservice: ExpressMicroservice ): void {
     microservice.application()
       .get(
         "/",
