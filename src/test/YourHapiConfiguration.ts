@@ -1,10 +1,10 @@
-import { HapiMicroserviceFactory, NodejsMicroservice } from "../main/index";
+import { HapiMicroserviceFactory, HapiMicroservice } from "../main/index";
 import Hapi from "@hapi/hapi";
 
 export default class YourHapiConfiguration
   extends HapiMicroserviceFactory {
 
-  public execute( microservice: NodejsMicroservice<Hapi.Server> ): void {
+  public execute( microservice: HapiMicroservice ): void {
     microservice.application()
       .route({
         method: 'GET',

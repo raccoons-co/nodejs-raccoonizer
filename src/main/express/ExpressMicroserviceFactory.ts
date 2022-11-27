@@ -1,14 +1,12 @@
 import AbstractCommand from "../AbstractCommand";
-import NodejsMicroservice from "../NodejsMicroservice"
 import AbstractMicroserviceFactory from "../AbstractMicroserviceFactory";
 import ExpressMicroservice from "./ExpressMicroservice";
-import express from "express";
 
 /**
  * This factory makes {@link ExpressMicroservice} objects.
  */
 export default abstract class ExpressMicroserviceFactory
-  extends AbstractCommand<NodejsMicroservice<express.Express>>
+  extends AbstractCommand<ExpressMicroservice>
   implements AbstractMicroserviceFactory {
 
   /**

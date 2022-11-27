@@ -1,12 +1,11 @@
 import AbstractCommand from "../AbstractCommand";
-import NodejsMicroservice from "../NodejsMicroservice";
-import express from "express";
+import ExpressMicroservice from "./ExpressMicroservice";
 
 /**
  * Puts Express microservice into operation.
  */
 export default class ExpressDeployCommand
-  extends AbstractCommand<NodejsMicroservice<express.Express>> {
+  extends AbstractCommand<ExpressMicroservice> {
 
   /** The microservice will listen this port. */
   private port: number;
@@ -26,7 +25,7 @@ export default class ExpressDeployCommand
    *
    * @param microservice The microservice that delegates to perform deploy.
    */
-  public execute( microservice: NodejsMicroservice<express.Express> ){
+  public execute( microservice: ExpressMicroservice ){
     microservice.application()
       .listen( this.port, () => {
         console.log( "%s listening on port %s", microservice.constructor.name, this.port );
