@@ -11,16 +11,17 @@ Install library with
 
 Implement `YourKoaConfiguration.ts`:
 ```typescript
-import { KoaMicroserviceFactory, NodejsMicroservice } from "@raccoons-co/nodejs-raccoonizer";
+import { KoaMicroserviceFactory, KoaMicroservice } from "@raccoons-co/nodejs-raccoonizer";
 import Koa from "koa";
 
 export default class YourKoaConfiguration
   extends KoaMicroserviceFactory {
 
-  public execute( microservice: NodejsMicroservice<Koa> ): void {
+  public execute( microservice: KoaMicroservice ): void {
     microservice.application()
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
+}
 }
 ```
 Implement your main `EntryPoint.ts`:
