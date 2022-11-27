@@ -5,10 +5,8 @@
  * @packageDocumentation
  * @public
  */
-// import AbstractMicroserviceFactory from "./AbstractMicroserviceFactory";
-import Microservice from "./Microservice"
 import MicroserviceFactory from "./MicroserviceFactory";
-// import NodejsMicroservice from "./NodejsMicroservice";
+import Microservice from "./Microservice"
 
 import ExpressMicroserviceFactory from "./express/ExpressMicroserviceFactory";
 import ExpressMicroservice from "./express/ExpressMicroservice";
@@ -23,10 +21,8 @@ import NestFastifyMicroserviceFactory from "./nestfastify/NestFastifyMicroservic
 import NestFastifyMicroservice from "./nestfastify/NestFastifyMicroservice";
 
 export {
-//   AbstractMicroserviceFactory,
-  Microservice,
   MicroserviceFactory,
-//   NodejsMicroservice,
+  Microservice,
   ExpressMicroserviceFactory,
   ExpressMicroservice,
   HapiMicroserviceFactory,
