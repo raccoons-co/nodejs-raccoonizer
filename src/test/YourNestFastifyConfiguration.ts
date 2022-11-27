@@ -1,7 +1,5 @@
 import { NestFastifyMicroserviceFactory, NestFastifyMicroservice } from "../main/index";
-import { NestFastifyApplication } from "@nestjs/platform-fastify";
 import YourNestFastifyAppModule from "./YourNestFastifyAppModule";
-
 
 export default class YourNestFastifyConfiguration
   extends NestFastifyMicroserviceFactory {
