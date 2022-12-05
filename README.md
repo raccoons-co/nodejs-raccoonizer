@@ -25,6 +25,7 @@ export default class YourKoaConfiguration
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
 }
+}
 ```
 Implement your main `EntryPoint.ts`:
 ```typescript
