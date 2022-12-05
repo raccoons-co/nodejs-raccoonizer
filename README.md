@@ -4,6 +4,9 @@
 
 A library for unified deploying of Nodejs microservices.
 
+Simple. Minimal. Beautiful.
+© 2022 Raccoons. Developing a simple way to change.
+
 Install library with
 ```shell
 % npm install @raccoons-co/nodejs-raccoonizer
@@ -21,7 +24,6 @@ export default class YourKoaConfiguration
     microservice.application()
       .use(async ( ctx: Koa.Context ) => { ctx.body = "Hello World"; } );
   }
-}
 }
 ```
 Implement your main `EntryPoint.ts`:
@@ -49,6 +51,8 @@ Run microservice with `package.json` script:
     "pretest": "npm run build",
     "start": "npm run this.microservice",
     "test": "echo ImplementYourTests",
-    "this.microservice": "node lib/test/EntryPoint"
+    "this.microservice": "node dist/EntryPoint"
 }
 ```
+
+For more
