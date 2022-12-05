@@ -13,8 +13,11 @@ export default class HapiDeployCommand
    * @param microservice The microservice that delegates to perform deploy.
    */
   public execute( microservice: HapiMicroservice ){
-    microservice.application().start();
-    console.log("%s listening on port %s", microservice.constructor.name,
-      microservice.application().info.port );
+    microservice.application()
+      .start()
+      .then( ()=> {
+        console.log("%s listening on port %s", microservice.constructor.name,
+            microservice.application().info.port )
+      });
   }
 }

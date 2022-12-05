@@ -26,9 +26,9 @@ export default class KoaDeployCommand
    * @param microservice The microservice that delegates to perform deploy.
    */
   public execute( microservice: KoaMicroservice ) {
-    microservice.application()
+    const httpServer = microservice.application()
       .listen( this.port, () => {
-        console.log("%s listening on port %s", microservice.constructor.name, this.port );
+        console.log("%s listening on %s", microservice.constructor.name, httpServer.address() );
       });
   }
 }

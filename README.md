@@ -4,6 +4,9 @@
 
 A library for unified deploying of Nodejs microservices.
 
+Simple. Minimal. Beautiful.
+© 2022 Raccoons. Developing a simple way to change.
+
 Install library with
 ```shell
 % npm install @raccoons-co/nodejs-raccoonizer
@@ -49,6 +52,8 @@ Run microservice with `package.json` script:
     "pretest": "npm run build",
     "start": "npm run this.microservice",
     "test": "echo ImplementYourTests",
-    "this.microservice": "node lib/test/EntryPoint"
+    "this.microservice": "node dist/EntryPoint"
 }
 ```
+
+For more

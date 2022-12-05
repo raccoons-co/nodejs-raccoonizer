@@ -17,27 +17,26 @@ try {
   const atPort = Number( process.env.PORT );
 
   new KoaMicroservice( atPort, new YourKoaConfiguration() ).deploy();
-  new ExpressMicroservice( atPort + 1, new YourExpressConfiguration() ).deploy();
-  new HapiMicroservice( atPort + 2, new YourHapiConfiguration() ).deploy();
-  new NestFastifyMicroservice( atPort + 3, new YourNestFastifyConfiguration(),
+  new ExpressMicroservice( 0, new YourExpressConfiguration() ).deploy();
+  new HapiMicroservice( 0, new YourHapiConfiguration() ).deploy();
+  new NestFastifyMicroservice( 0, new YourNestFastifyConfiguration(),
     YourNestFastifyAppModule ).deploy();
 
   new MicroserviceFactory( new YourKoaConfiguration() )
-    .microservice( atPort + 10 )
+    .microservice( 0 )
     .deploy();
 
   new MicroserviceFactory( new YourExpressConfiguration() )
-    .microservice( atPort + 11 )
+    .microservice( 0 )
     .deploy();
 
   new MicroserviceFactory( new YourHapiConfiguration() )
-    .microservice( atPort + 12 )
+    .microservice( 0 )
     .deploy();
 
     new MicroserviceFactory( new YourNestFastifyConfiguration() )
-      .microservice( atPort + 13 )
+      .microservice( 0 )
       .deploy();
-
 } catch( exception ) {
     console.log( exception );
 }

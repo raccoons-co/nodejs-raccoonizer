@@ -1,6 +1,9 @@
-// Copyright (c) 2022 Raccoons. All rights reserved. Licensed under the MIT license.
 /**
- * A library for unified deploying of Nodejs microservices.
+ * The library for unified deploying of Nodejs microservices.
+ *
+ *  Simple. Minimal. Beautiful.
+ *  © 2022 Raccoons. Developing a simple way to change.
+
  *
  * @packageDocumentation
  * @public
